@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ title }}
+{% endblock %}
+
+{% block body %}
+	<h1>{{ title }}</h1>
+
+	<h2>
+		({{ tag.name }}) (id:
+		{{ tag.id }})</h2>
+	<p>
+		{{ tag.description }}</p>
+
+	{% for tag in tags %}
+		<h2>
+			({{ tag.name }}) (id:
+			{{ tag.id }})</h2>
+		<p>
+			{{ tag.description }}</p>
+	{% endfor %}
+
+	<h2>Liste des tags avec mot-clé</h2>
+
+	{% for tag in keywordTags1 %}
+		<h3>{{ tag.name}}
+			(id
+			{{ tag.id}})</h3>
+		<p>{{ tag.description1}}</p>
+	{% endfor %}
+
+
+{% endblock %}
